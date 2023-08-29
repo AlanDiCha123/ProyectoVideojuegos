@@ -1,0 +1,2 @@
+relativenumber
+imap jk <Esc>
