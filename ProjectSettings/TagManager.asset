@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fondo
+    uniqueID: 477085907
+    locked: 0
+  - name: Limite
+    uniqueID: 1909026717
+    locked: 0
+  - name: Arboles
+    uniqueID: 2603625591
+    locked: 0
+  - name: Casa
+    uniqueID: 3902299753
+    locked: 0
+  - name: Personaje
+    uniqueID: 3944555465
+    locked: 0

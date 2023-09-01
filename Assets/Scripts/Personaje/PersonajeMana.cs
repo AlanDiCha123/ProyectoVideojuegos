@@ -55,6 +55,7 @@ public class PersonajeMana : MonoBehaviour
     public void RestablecerMana()
     {
         ManaActual = manaInicial;
+        ActualizarBarraMana();
     }
 
     private void ActualizarBarraMana()

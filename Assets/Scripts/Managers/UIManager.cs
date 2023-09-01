@@ -34,6 +34,10 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI statNivelTMP;
     [SerializeField] private TextMeshProUGUI statExpTMP;
     [SerializeField] private TextMeshProUGUI statExpReqTMP;
+    [SerializeField] private TextMeshProUGUI atributoFuerzaTMP;
+    [SerializeField] private TextMeshProUGUI atributoSabiduriaTMP;
+    [SerializeField] private TextMeshProUGUI atributoDestrezaTMP;
+    [SerializeField] private TextMeshProUGUI atributoDisponiblesTMP;
 
     private float vidaActual;
     private float vidaMax;
@@ -79,6 +83,11 @@ public class UIManager : Singleton<UIManager>
         statNivelTMP.text = stats.Nivel.ToString();
         statExpTMP.text = stats.ExpActual.ToString();
         statExpReqTMP.text = stats.ExpReqSigNivel.ToString();
+
+        atributoFuerzaTMP.text = stats.Fuerza.ToString();
+        atributoSabiduriaTMP.text = stats.Sabiduria.ToString();
+        atributoDestrezaTMP.text = stats.Destreza.ToString();
+        atributoDisponiblesTMP.text = stats.PuntosDisponbiles.ToString();
     }
 
     public void ActualizarVidaPersonaje(float pVidaActual, float pVidaMax)

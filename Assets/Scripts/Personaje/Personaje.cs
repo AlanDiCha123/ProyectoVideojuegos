@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
+    [SerializeField] private PersonajeStats stats;
+
+
+
     public PersonajeVida PersonajeVida { get; private set; }
     public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
     public PersonajeMana PersonajeMana { get; private set; }
@@ -21,6 +25,41 @@ public class Personaje : MonoBehaviour
         PersonajeVida.RestaurarPersonaje();
         PersonajeAnimaciones.RevivirPersonaje();
         PersonajeMana.RestablecerMana();
+    }
+
+    private void AtributoRespuesta(TipoAtributo tipo)
+    {
+        if (stats.PuntosDisponbiles <= 0)
+        {
+            return;
+        }
+
+
+        switch (tipo)
+        {
+            case TipoAtributo.Fuerza:
+                stats.AgregarBonusPorAtributoFuerza();
+                stats.Fuerza++;
+                break;
+            case TipoAtributo.Sabiduria:
+                stats.AgregarBonusPorSabiduria();
+                stats.Sabiduria++;
+                break;
+            case TipoAtributo.Destreza:
+                stats.AgregarBonusPorDestreza();
+                stats.Destreza++;
+                break;
+        }
+        stats.PuntosDisponbiles -= 1;
+    }
+    private void OnEnable()
+    {
+        AtributoButton.EventoAgregarAtributo += AtributoRespuesta;
+    }
+
+    private void OnDisable()
+    {
+        AtributoButton.EventoAgregarAtributo += AtributoRespuesta;
     }
 
 }

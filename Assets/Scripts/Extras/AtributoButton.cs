@@ -1,21 +1,34 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Extras
+public enum TipoAtributo
 {
-    public class AtributoButton : MonoBehaviour
+    Fuerza,
+    Sabiduria,
+    Destreza
+}
+public class AtributoButton : MonoBehaviour
+{
+
+    public static Action<TipoAtributo> EventoAgregarAtributo;
+    [SerializeField] private TipoAtributo tipo;
+
+
+    public void AgregarAtributo()
+    {
+        EventoAgregarAtributo?.Invoke(tipo);
+    }
+
+    // Use this for initialization
+    void Start()
     {
 
-        // Use this for initialization
-        void Start()
-        {
+    }
 
-        }
+    // Update is called once per frame
+    void Update()
+    {
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

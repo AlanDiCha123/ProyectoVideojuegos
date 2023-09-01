@@ -17,10 +17,30 @@ public class PersonajeStats : ScriptableObject
 
     [Header("Atributos")]
     public int Fuerza;
-    public int Inteligencia;
+    public int Sabiduria;
     public int Destreza;
 
     [HideInInspector] public int PuntosDisponbiles;
+
+
+    public void AgregarBonusPorAtributoFuerza()
+    {
+        Damage += 2f;
+        Defensa += 1f;
+        PorcentajeBloqueo += 0.03f;
+    }
+
+    public void AgregarBonusPorSabiduria()
+    {
+        Damage += 3f;
+        PorcentajeCritico += 0.2f;
+    }
+
+    public void AgregarBonusPorDestreza()
+    {
+        Velocidad += 0.1f;
+        PorcentajeBloqueo += 0.05f;
+    }
 
     public void ResetearValores()
     {
@@ -34,7 +54,7 @@ public class PersonajeStats : ScriptableObject
         PorcentajeCritico = 0f;
 
         Fuerza = 0;
-        Inteligencia = 0;
+        Sabiduria = 0;
         Destreza = 0;
 
         PuntosDisponbiles = 0;

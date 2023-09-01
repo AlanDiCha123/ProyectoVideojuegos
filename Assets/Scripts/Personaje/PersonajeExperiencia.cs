@@ -31,7 +31,7 @@ public class PersonajeExperiencia : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            AgregarExperiencia(10f);
+            AgregarExperiencia(2f);
         }
     }
 
@@ -69,6 +69,7 @@ public class PersonajeExperiencia : MonoBehaviour
             expActualTemp = 0f;
             expReqSigNivel *= valorIncremental;
             stats.ExpReqSigNivel = expReqSigNivel;
+            stats.PuntosDisponbiles += 3;
         }
     }
 
