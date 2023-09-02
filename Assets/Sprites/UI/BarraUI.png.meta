@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,10 +110,10 @@ TextureImporter:
       name: BarraUI_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 4
-        width: 24
-        height: 27
+        x: 8
+        y: 5
+        width: 22
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: BarraUI_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 4
-        width: 24
-        height: 27
+        x: 36
+        y: 5
+        width: 22
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: BarraUI_2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 4
-        width: 29
-        height: 27
+        x: 64
+        y: 5
+        width: 27
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: BarraUI_3
       rect:
         serializedVersion: 2
-        x: 95
-        y: 3
-        width: 28
-        height: 28
+        x: 96
+        y: 4
+        width: 26
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,14 +193,18 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b163a6fcaa4b72479b116d1e19d87c6
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BarraUI_0: 425845598855699027
+      BarraUI_1: 1478739925597350199
+      BarraUI_2: -1964540290777306295
+      BarraUI_3: 3991059510665042976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

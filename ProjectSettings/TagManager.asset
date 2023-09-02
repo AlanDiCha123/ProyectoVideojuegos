@@ -53,6 +53,12 @@ TagManager:
   - name: Casa
     uniqueID: 3902299753
     locked: 0
+  - name: Props
+    uniqueID: 260960685
+    locked: 0
+  - name: Items
+    uniqueID: 2607771199
+    locked: 0
   - name: Personaje
     uniqueID: 3944555465
     locked: 0
