@@ -1,2 +1,0 @@
-relativenumber
-imap jk <Esc>

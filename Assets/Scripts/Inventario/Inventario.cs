@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Inventario : Singleton<Inventario>
 {
-    [SerializeField] private int numeroSlots;
-    public int NumeroSlots => numeroSlots;
-
-
     [Header("Items")]
+    [SerializeField] private Personaje personaje;
+    [SerializeField] private int numeroSlots;
     [SerializeField] private InventarioItem[] itemsInventario;
+
+    public Personaje Personaje => personaje;
+    public int NumeroSlots => numeroSlots;
     public InventarioItem[] ItemsInventario => itemsInventario;
 
     // Start is called before the first frame update
@@ -84,6 +86,84 @@ public class Inventario : Singleton<Inventario>
             }
         }
     }
+
+    private void EliminarItem(int index)
+    {
+        ItemsInventario[index].Cantidad--;
+        if (itemsInventario[index].Cantidad <= 0)
+        {
+            itemsInventario[index].Cantidad = 0;
+            itemsInventario[index] = null;
+            InventarioUI.Instance.DibujarItemInventario(null, 0, index);
+        }
+        else
+        {
+            InventarioUI.Instance.DibujarItemInventario(itemsInventario[index], itemsInventario[index].Cantidad, index);
+        }
+    }
+
+    public void MoverItem(int indexInicial, int indexFinal)
+    {
+        if (itemsInventario[indexInicial] == null || itemsInventario[indexFinal] != null)
+        {
+            return;
+        }
+        // Copiar item en slot final
+        InventarioItem itemPorMover = itemsInventario[indexInicial].CopiarItem();
+        itemsInventario[indexFinal] = itemPorMover;
+        InventarioUI.Instance.DibujarItemInventario(itemPorMover, itemPorMover.Cantidad, indexFinal);
+
+        // Borramos Item de Slot inicial
+        itemsInventario[indexInicial] = null;
+        InventarioUI.Instance.DibujarItemInventario(null, 0, indexInicial);
+    }
+
+
+    private void UsarItem(int index)
+    {
+        if (itemsInventario[index] == null)
+        {
+            return;
+        }
+
+        if (itemsInventario[index].UsarItem())
+        {
+            EliminarItem(index);
+        }
+    }
+
+
+    #region Eventos
+
+    private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
+    {
+        switch (tipo)
+        {
+            case TipoDeInteraccion.Usar:
+                UsarItem(index);
+                break;
+            case TipoDeInteraccion.Equipar:
+                break;
+            case TipoDeInteraccion.Remover:
+                break;
+
+        }
+    }
+
+    private void OnEnable()
+    {
+        InventarioSlot.EventoSlotInteraccion += SlotInteraccionRespuesta;
+    }
+
+    private void OnDisable()
+    {
+        InventarioSlot.EventoSlotInteraccion -= SlotInteraccionRespuesta;
+    }
+
+
+
+
+    #endregion
 
     // Update is called once per frame
     void Update()

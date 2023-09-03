@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventarioUI : Singleton<InventarioUI>
@@ -17,12 +18,15 @@ public class InventarioUI : Singleton<InventarioUI>
     [SerializeField] private InventarioSlot slotPrefab;
     [SerializeField] private Transform contenedor;
 
-    List<InventarioSlot> slotsCreados = new List<InventarioSlot>();
+    public int IndexSlotInicialPorMover { get; private set; }
+    public InventarioSlot SlotSeleccionado { get; private set; }
+    private List<InventarioSlot> slotsCreados = new List<InventarioSlot>();
 
     // Start is called before the first frame update
     void Start()
     {
         InicializarInventario();
+        IndexSlotInicialPorMover = -1;
     }
 
     private void InicializarInventario()
@@ -32,6 +36,20 @@ public class InventarioUI : Singleton<InventarioUI>
             InventarioSlot nuevoSlot = Instantiate(slotPrefab, contenedor);
             nuevoSlot.Index = i;
             slotsCreados.Add(nuevoSlot);
+        }
+    }
+
+    private void ActualizarSlotSeleccionado()
+    {
+        GameObject goSeleccionado = EventSystem.current.currentSelectedGameObject;
+        if (goSeleccionado == null)
+        {
+            return;
+        }
+        InventarioSlot slot = goSeleccionado.GetComponent<InventarioSlot>();
+        if (slot != null)
+        {
+            SlotSeleccionado = slot;
         }
     }
 
@@ -65,6 +83,17 @@ public class InventarioUI : Singleton<InventarioUI>
         }
     }
 
+    public void UsarItem()
+    {
+        if (SlotSeleccionado != null)
+        {
+            SlotSeleccionado.SlotUsarItem();
+            SlotSeleccionado.SeleccionarSlot();
+        }
+    }
+
+    #region Evento
+
     private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
     {
         if (tipo == TipoDeInteraccion.Click)
@@ -84,9 +113,15 @@ public class InventarioUI : Singleton<InventarioUI>
         InventarioSlot.EventoSlotInteraccion -= SlotInteraccionRespuesta;
     }
 
+    #endregion
+
     // Update is called once per frame
     void Update()
     {
-        
+        ActualizarSlotSeleccionado();
+        if (Input.GetKeyDown(KeyCode.M) && SlotSeleccionado != null)
+        {
+            IndexSlotInicialPorMover = SlotSeleccionado.Index;
+        }
     }
 }

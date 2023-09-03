@@ -26,6 +26,13 @@ public class InventarioSlot : MonoBehaviour
 
     public int Index { get; set; }
 
+    private Button _button;
+
+    private void Awake()
+    {
+        _button = GetComponent<Button>();
+    }
+
     public void ActualizarSlotUI(InventarioItem item, int cantidad)
     {
         itemIcono.sprite = item.Icono;
@@ -38,11 +45,29 @@ public class InventarioSlot : MonoBehaviour
         fondoCantidad.SetActive(estado);
     }
 
+    public void SeleccionarSlot()
+    {
+        _button.Select();
+    }
+
     public void ClickSlot()
     {
         EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Click, Index);
+        // Mover item
+        if (InventarioUI.Instance.IndexSlotInicialPorMover != -1 && InventarioUI.Instance.IndexSlotInicialPorMover != Index)
+        {
+            // ! Mover
+            Inventario.Instance.MoverItem(InventarioUI.Instance.IndexSlotInicialPorMover, Index);
+        }
     }
 
+    public void SlotUsarItem()
+    {
+        if (Inventario.Instance.ItemsInventario[Index] != null)
+        {
+            EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Usar, Index);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
