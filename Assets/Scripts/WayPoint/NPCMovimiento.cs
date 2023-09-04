@@ -10,17 +10,6 @@ public class NPCMovimiento : WaypointMovimiento
 
     private readonly int caminarAbajo = Animator.StringToHash("CaminarAbajo");
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     protected override void RotarPersonaje()
     {

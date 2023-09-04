@@ -10,7 +10,18 @@ public class Waypoint : MonoBehaviour
     public Vector3 PosicionActual { get; set; }
     private bool juegoIniciado;
 
-    public Vector3 ObtenerPosicionMovimiento(int index) => PosicionActual + puntos[index];
+    void Start()
+    {
+        juegoIniciado = true;
+        PosicionActual = transform.position;
+    }
+
+
+
+    public Vector3 ObtenerPosicionMovimiento(int index)
+    {
+        return PosicionActual + puntos[index];
+    }
 
     private void OnDrawGizmos()
     {
@@ -38,11 +49,6 @@ public class Waypoint : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        juegoIniciado = true;
-        PosicionActual = transform.position;
-    }
 
     // Update is called once per frame
     void Update()

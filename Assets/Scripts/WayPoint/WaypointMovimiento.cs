@@ -58,9 +58,12 @@ public class WaypointMovimiento : MonoBehaviour
         {
             puntoActualIndex = 0;
         }
-        else if (puntoActualIndex < _waypoint.Puntos.Length - 1)
+        else 
         {
-            puntoActualIndex++;
+            if (puntoActualIndex < _waypoint.Puntos.Length - 1)
+            {
+                puntoActualIndex++;
+            }
         }
     }
 
