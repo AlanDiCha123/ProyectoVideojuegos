@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7e4c75dc101cb46870a55b21dc6faf, type: 3}
+  m_Name: DialogoAldeano
+  m_EditorClassIdentifier: 
+  Nombre: Matoba
+  Icono: {fileID: 21300000, guid: 7fd0bd3c0a118fe408e43787f5c33aaa, type: 3}
+  Saludo: Hola Aldeano
+  Conversacion:
+  - Oracion: Mucha gente ha sido atacada por ese malvado
+  - Oracion: La ultima que se ha visto fue en el bosque
+  Despedida: Ya no te molesto mas. Sigue tu camino
