@@ -3,12 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum InteraccionExtraNPC
+{
+    Quests,
+    Tienda,
+    Crafting
+}
+
+
+
 [CreateAssetMenu]
 public class NPCDialogo : ScriptableObject
 {
     [Header("Info")]
     public string Nombre;
     public Sprite Icono;
+    public bool ContieneInteraccionExtra;
+    public InteraccionExtraNPC InteraccionExtra;
 
 
     [Header("Saludo")]
@@ -19,17 +30,7 @@ public class NPCDialogo : ScriptableObject
 
     [Header("Saludo")]
     [TextArea] public string Despedida;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
 
 [Serializable]

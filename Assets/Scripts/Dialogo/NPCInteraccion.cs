@@ -7,7 +7,7 @@ public class NPCInteraccion : MonoBehaviour
     [SerializeField] private GameObject npcButtonInteractuar;
     [SerializeField] private NPCDialogo npcDialogo;
     
-    public NPCDialogo dialogo => npcDialogo;
+    public NPCDialogo Dialogo => npcDialogo;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

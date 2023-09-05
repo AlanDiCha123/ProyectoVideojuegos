@@ -6,6 +6,8 @@ public enum TiposItem
 {
     Armas,
     Pociones,
+    Pergaminos,
+    Ingredientes,
     Tesoros
 }
 

@@ -30,7 +30,7 @@ public class DialogoManager : Singleton<DialogoManager>
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ConfigurarPanel(NPCDisponible.dialogo);
+            ConfigurarPanel(NPCDisponible.Dialogo);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -38,6 +38,13 @@ public class DialogoManager : Singleton<DialogoManager>
             {
                 AbrirCerrarPanelDialogo(false);
                 despedidaMostrada = false;
+                return;
+            }
+
+            if (NPCDisponible.Dialogo.ContieneInteraccionExtra)
+            {
+                UIManager.Instance.AbrirPanelInteraccion(NPCDisponible.Dialogo.InteraccionExtra);
+                AbrirCerrarPanelDialogo(false);
                 return;
             }
 
@@ -81,7 +88,7 @@ public class DialogoManager : Singleton<DialogoManager>
         if (despedidaMostrada) return;
         if (dialogosSecuencia.Count == 0)
         {
-            string despedida = NPCDisponible.dialogo.Despedida;
+            string despedida = NPCDisponible.Dialogo.Despedida;
             MostrarTextoConAnimacion(despedida);
             despedidaMostrada = true;
             return;
