@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestManager : Singleton<QuestManager>
 {
@@ -15,6 +18,15 @@ public class QuestManager : Singleton<QuestManager>
     [SerializeField] private PersonajeQuestDescripcion personajeQuestPrefab;
     [SerializeField] private Transform personajeQuestContenedor;
 
+    [Header("Panel Quests")]
+    [SerializeField] private GameObject panelQuestsCompletado;
+    [SerializeField] private TextMeshProUGUI questNombre;
+    [SerializeField] private TextMeshProUGUI questRecomOro_TMP;
+    [SerializeField] private TextMeshProUGUI questRecompXP_TMP;
+    [SerializeField] private TextMeshProUGUI questRecomp_Item_TMP;
+    [SerializeField] private Image questRecomp_Imagen;
+
+    public Quest QuestPorReclamar { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +43,16 @@ public class QuestManager : Singleton<QuestManager>
             AgregarProgreso("Mata20", 1);
             AgregarProgreso("Mata50", 1);
         }
+    }
+
+    private void MostrarQuestCompletado(Quest questCompletado)
+    {
+        panelQuestsCompletado.SetActive(true);
+        questNombre.text = questCompletado.Nombre;
+        questRecomOro_TMP.text = questCompletado.RecompensaOro.ToString();
+        questRecompXP_TMP.text = questCompletado.RecompensaXP.ToString();
+        questRecomp_Item_TMP.text = questCompletado.RecompensaItem.Cantidad.ToString();
+        questRecomp_Imagen.sprite = questCompletado.RecompensaItem.Item.Icono;
     }
 
     private void CargarQuestEnInspector()
@@ -56,7 +78,7 @@ public class QuestManager : Singleton<QuestManager>
     public void AgregarProgreso(string questID, int cantidad)
     {
         Quest questPorActualizar = QuestExiste(questID);
-        questPorActualizar?.AgregarProgreso(cantidad);
+        questPorActualizar.AgregarProgreso(cantidad);
     }
 
     private Quest QuestExiste(string questID)
@@ -70,5 +92,25 @@ public class QuestManager : Singleton<QuestManager>
         }
         return null;
     }
+
+    private void OnEnable()
+    {
+        Quest.EventoQuestCompletado += QuestCompletadoRespuesta;
+    }
+
+    private void QuestCompletadoRespuesta(Quest questCompletado)
+    {
+        QuestPorReclamar = QuestExiste(questCompletado.ID);
+        if (QuestPorReclamar != null)
+        {
+            MostrarQuestCompletado(QuestPorReclamar);
+        }
+    }
+
+    private void OnDisable()
+    {
+        Quest.EventoQuestCompletado -= QuestCompletadoRespuesta;
+    }
+
 
 }

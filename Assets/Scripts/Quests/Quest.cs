@@ -50,6 +50,12 @@ public class Quest : ScriptableObject
         IsQuestCompletado = true;
         EventoQuestCompletado?.Invoke(this);
     }
+
+    private void OnEnable()
+    {
+        IsQuestCompletado = false;
+        CantidadActual = 0;
+    }
 }
 
 [Serializable]
