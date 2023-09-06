@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    
+
     [Header("Stats")]
     [SerializeField] private PersonajeStats stats;
 
@@ -27,6 +27,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI expTMP;
     [Header("Nivel")]
     [SerializeField] private TextMeshProUGUI nivelTMP;
+    [Header("Nivel")]
+    [SerializeField] private TextMeshProUGUI monedasTMP;
 
     [Header("Stats")]
     [SerializeField] private TextMeshProUGUI statDamageTMP;
@@ -67,8 +69,9 @@ public class UIManager : Singleton<UIManager>
 
         vidaTMP.text = $"{vidaActual}/{vidaMax}";
         manaTMP.text = $"{manaActual}/{manaMax}";
-        expTMP.text = $"{((expActual/expReqNuevoNivel) * 100):F0}%";
+        expTMP.text = $"{(expActual / expReqNuevoNivel * 100):F0}%";
         nivelTMP.text = $"Nivel {stats.Nivel}";
+        monedasTMP.text = MonedasManager.Instance.MonedasTotales.ToString();
     }
 
     private void ActualizarPanelStats()
