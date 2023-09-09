@@ -11,10 +11,12 @@ public class PersonajeVida : VidaBase
     public bool Derrotado { get; private set; }
     public bool PuedeSerCurado => Salud < saludMax;
     private BoxCollider2D _boxCollider2D;
+    private GameObject personaMovimiento;
 
     private void Awake()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
+        personaMovimiento = GameObject.FindWithTag("Player");
     }
 
     protected override void Start()
@@ -41,8 +43,8 @@ public class PersonajeVida : VidaBase
         {
             return;
         }
-        
-        
+
+
         if (PuedeSerCurado)
         {
             Salud += cantidad;
@@ -60,6 +62,7 @@ public class PersonajeVida : VidaBase
         _boxCollider2D.enabled = false;
         Derrotado = true;
         EventoPersonajeDerrotado?.Invoke();
+        personaMovimiento.GetComponent<PersonajeMovimiento>().enabled = false;
     }
 
     public void RestaurarPersonaje()

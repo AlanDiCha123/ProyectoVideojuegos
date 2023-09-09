@@ -15,11 +15,6 @@ public class VidaBase : MonoBehaviour
         Salud = saludInicial;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void RecibirDamage(float cantidad)
     {
@@ -31,6 +26,7 @@ public class VidaBase : MonoBehaviour
             ActualizarBarraVida(Salud, saludMax);
             if (Salud <= 0)
             {
+                Salud = 0f;
                 ActualizarBarraVida(Salud, saludMax);
                 PersonajeDerrotado();
             }
