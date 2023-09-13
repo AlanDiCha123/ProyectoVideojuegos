@@ -68,15 +68,32 @@ public class InventarioSlot : MonoBehaviour
             EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Usar, Index);
         }
     }
+
+    public void SlotEquiparItem()
+    {
+        if (Inventario.Instance.ItemsInventario[Index] != null)
+        {
+            EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Equipar, Index);
+        }
+    }
+
+    public void SlotRemoverItem()
+    {
+        if (Inventario.Instance.ItemsInventario[Index] != null)
+        {
+            EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Remover, Index);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

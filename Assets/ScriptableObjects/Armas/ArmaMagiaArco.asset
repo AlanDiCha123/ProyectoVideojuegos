@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8af47b1a187de43b373013ca870d18, type: 3}
+  m_Name: ArmaMagiaArco
+  m_EditorClassIdentifier: 
+  ArmaIcono: {fileID: -5998490204781553862, guid: 60099669bbd24de4ab16837e984a5d97, type: 3}
+  IconoSkill: {fileID: -1837342885450397278, guid: 14f74f34781d14d4bb1047bbc5a51a7b, type: 3}
+  Tipo: 0
+  Damage: 5
+  ManaRequerida: 12
+  ChanceCritico: 1.7
+  ChanceBloqueo: 0.8

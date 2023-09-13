@@ -42,6 +42,20 @@ public class PersonajeStats : ScriptableObject
         PorcentajeBloqueo += 0.05f;
     }
 
+    public void AgregarBonusPorArma(Arma arma)
+    {
+        Damage += arma.Damage;
+        PorcentajeCritico += arma.ChanceCritico;
+        PorcentajeBloqueo += arma.ChanceBloqueo;
+    }
+
+    public void RemoverBonusPorArma(Arma arma)
+    {
+        Damage -= arma.Damage;
+        PorcentajeCritico -= arma.ChanceCritico;
+        PorcentajeBloqueo -= arma.ChanceBloqueo;
+    }
+
     public void ResetearValores()
     {
         Damage = 5f;

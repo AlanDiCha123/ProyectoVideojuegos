@@ -132,6 +132,23 @@ public class Inventario : Singleton<Inventario>
         }
     }
 
+    private void EquiparItem(int index)
+    {
+        if (itemsInventario[index] == null || itemsInventario[index].Tipo != TiposItem.Armas)
+        {
+            return;
+        }
+        itemsInventario[index].EquiparItem();
+    }
+
+    private void RemoverItem(int index)
+    {
+        if (itemsInventario[index] == null || itemsInventario[index].Tipo != TiposItem.Armas)
+        {
+            return;
+        }
+        itemsInventario[index].RemoverItem();
+    }
 
     #region Eventos
 
@@ -143,8 +160,10 @@ public class Inventario : Singleton<Inventario>
                 UsarItem(index);
                 break;
             case TipoDeInteraccion.Equipar:
+                EquiparItem(index);
                 break;
             case TipoDeInteraccion.Remover:
+                RemoverItem(index);
                 break;
 
         }
@@ -168,6 +187,6 @@ public class Inventario : Singleton<Inventario>
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

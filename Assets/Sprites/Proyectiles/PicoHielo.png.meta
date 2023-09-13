@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,9 +123,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 18
-        height: 10
+        y: 1
+        width: 17
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,9 +143,9 @@ TextureImporter:
       name: PicoHielo_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 18
         y: 0
-        width: 19
+        width: 17
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -164,9 +164,9 @@ TextureImporter:
       name: PicoHielo_2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 36
         y: 0
-        width: 19
+        width: 17
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,9 +185,9 @@ TextureImporter:
       name: PicoHielo_3
       rect:
         serializedVersion: 2
-        x: 53
+        x: 54
         y: 0
-        width: 19
+        width: 17
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,9 +206,9 @@ TextureImporter:
       name: PicoHielo_4
       rect:
         serializedVersion: 2
-        x: 71
+        x: 72
         y: 0
-        width: 19
+        width: 17
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -227,9 +227,9 @@ TextureImporter:
       name: PicoHielo_5
       rect:
         serializedVersion: 2
-        x: 89
+        x: 90
         y: 0
-        width: 19
+        width: 17
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -248,9 +248,9 @@ TextureImporter:
       name: PicoHielo_6
       rect:
         serializedVersion: 2
-        x: 107
+        x: 108
         y: 0
-        width: 19
+        width: 17
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: PicoHielo_7
       rect:
         serializedVersion: 2
-        x: 125
-        y: 0
-        width: 19
-        height: 10
+        x: 126
+        y: 1
+        width: 17
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,7 +289,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 084971b6fa6d37a4b8d5807d74336d3a
     internalID: 0
     vertices: []
     indices: 

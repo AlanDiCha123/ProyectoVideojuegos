@@ -1,20 +1,35 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
+
+public enum TipoPersonaje
+{
+    Player,
+    IA
+}
 
 public class PersonajeFX : MonoBehaviour
 {
+    [Header("Pooler")]
+    [SerializeField] private ObjectPooler pooler;
+
+
+    [Header("Config")]
     [SerializeField] private GameObject canvasTextoAnimacionPrefab;
     [SerializeField] private Transform canvasTextoPosicion;
 
-    private ObjectPooler pooler;
+    [Header("Config")]
+    [SerializeField] private TipoPersonaje tipoPersonaje;
 
-    private void Awake()
+
+    private EnemigoVida _enemigoVida;
+
+    private void Awake() 
     {
-        pooler = GetComponent<ObjectPooler>();
+        _enemigoVida = GetComponent<EnemigoVida>();
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +51,31 @@ public class PersonajeFX : MonoBehaviour
         nuevoTextoGO.transform.SetParent(pooler.ListaContenedor.transform);
     }
 
-    private void OnEnable()
+    private void RespuestaDamageHaciaEnemigo(float damage, EnemigoVida enemigoVida)
     {
-        IAController.EventoDamageRealizado += RespuestaDamageRecibido;
+        if (tipoPersonaje == TipoPersonaje.IA && _enemigoVida == enemigoVida)
+        {
+            StartCoroutine(IEMostrarTexto(damage));
+        }
     }
 
-    private void RespuestaDamageRecibido(float obj)
+    private void OnEnable()
     {
-        StartCoroutine(IEMostrarTexto(obj));
+        IAController.EventoDamageRealizado += RespuestaDamageRecibidoHaciaPlayer;
+        PersonajeAtaque.EventoEnemigoDamage += RespuestaDamageHaciaEnemigo;
+    }
+
+    private void RespuestaDamageRecibidoHaciaPlayer(float obj)
+    {
+        if (tipoPersonaje == TipoPersonaje.Player)
+        {
+            StartCoroutine(IEMostrarTexto(obj));
+        }
     }
 
     private void OnDisable()
     {
-        IAController.EventoDamageRealizado -= RespuestaDamageRecibido;
+        IAController.EventoDamageRealizado -= RespuestaDamageRecibidoHaciaPlayer;
+        PersonajeAtaque.EventoEnemigoDamage -= RespuestaDamageHaciaEnemigo;
     }
 }

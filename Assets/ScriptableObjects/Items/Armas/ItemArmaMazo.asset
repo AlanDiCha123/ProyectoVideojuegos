@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d48f358bbb86a4ab7fefe18eafdf0e, type: 3}
+  m_Name: ItemArmaMazo
+  m_EditorClassIdentifier: 
+  ID: ArmaMazo
+  Nombre: Mazo
+  Icono: {fileID: 4647466500793055683, guid: f6e389855425130439b8eae93e654684, type: 3}
+  Descripcion: Mazo para noquear a todo aquel que te desafie
+  Tipo: 0
+  isConsumible: 0
+  isAcumulable: 0
+  isEquipable: 1
+  AcumulacionMax: 1
+  Cantidad: 0
+  Arma: {fileID: 11400000, guid: c2e47dded38afe74482f1760aebf2612, type: 2}

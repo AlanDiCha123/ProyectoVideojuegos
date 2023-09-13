@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d48f358bbb86a4ab7fefe18eafdf0e, type: 3}
+  m_Name: ItemArmaTridente
+  m_EditorClassIdentifier: 
+  ID: ArmaTridente
+  Nombre: Tridente
+  Icono: {fileID: -3621735169915983642, guid: 14b1b26da8e205c438004a48eff07bf7, type: 3}
+  Descripcion: Tridente para rechazar a tus enemigos, muestrales quien manda!!
+  Tipo: 0
+  isConsumible: 0
+  isAcumulable: 0
+  isEquipable: 1
+  AcumulacionMax: 1
+  Cantidad: 0
+  Arma: {fileID: 11400000, guid: 00f5ea9cd72ea4e47a113a664256d096, type: 2}

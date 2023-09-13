@@ -27,7 +27,7 @@ public class InventarioItem : ScriptableObject
     public bool isEquipable;
     public int AcumulacionMax;
 
-    public int Cantidad;
+    [HideInInspector] public int Cantidad;
 
     public InventarioItem CopiarItem()
     {

@@ -12,9 +12,11 @@ public class UIManager : Singleton<UIManager>
 
     [Header("Paneles")]
     [SerializeField] private GameObject panelStats;
+    [SerializeField] private GameObject panelTienda;
     [SerializeField] private GameObject panelInventario;
     [SerializeField] private GameObject panelInspectorQuest;
     [SerializeField] private GameObject panelPersonajeQuest;
+    [SerializeField] private GameObject panelVolumen;
 
     [Header("Vida")]
     [SerializeField] private Image vidaPlayer;
@@ -62,14 +64,15 @@ public class UIManager : Singleton<UIManager>
 
     private void ActualizarUIPersonaje()
     {
-        vidaPlayer.fillAmount = Mathf.Lerp(vidaPlayer.fillAmount, vidaActual / vidaMax, 10f * Time.deltaTime);
+        vidaPlayer.fillAmount = Mathf.Lerp(vidaPlayer.fillAmount, 
+            vidaActual / vidaMax, 10f * Time.deltaTime);
 
         manaPlayer.fillAmount = Mathf.Lerp(manaPlayer.fillAmount, manaActual / manaMax, 10f * Time.deltaTime);
         expPlayer.fillAmount = Mathf.Lerp(expPlayer.fillAmount, expActual / expReqNuevoNivel, 10f * Time.deltaTime);
 
         vidaTMP.text = $"{vidaActual}/{vidaMax}";
         manaTMP.text = $"{manaActual}/{manaMax}";
-        expTMP.text = $"{(expActual / expReqNuevoNivel * 100):F0}%";
+        expTMP.text = $"{expActual / expReqNuevoNivel * 100:F0}%";
         nivelTMP.text = $"Nivel {stats.Nivel}";
         monedasTMP.text = MonedasManager.Instance.MonedasTotales.ToString();
     }
@@ -118,11 +121,17 @@ public class UIManager : Singleton<UIManager>
 
     public void AbrirCerrarPanelStats()
     {
+        panelVolumen.SetActive(false);
+        panelInventario.SetActive(false);
+        panelPersonajeQuest.SetActive(false);
         panelStats.SetActive(!panelStats.activeSelf);
     }
 
     public void AbrirCerrarPanelInventario()
     {
+        panelVolumen.SetActive(false);
+        panelPersonajeQuest.SetActive(false);
+        panelStats.SetActive(false);
         panelInventario.SetActive(!panelInventario.activeSelf);
     }
 
@@ -133,7 +142,18 @@ public class UIManager : Singleton<UIManager>
 
     public void AbrirCerrarPanelPersonajeQuest()
     {
+        panelVolumen.SetActive(false);
+        panelInventario.SetActive(false);
+        panelStats.SetActive(false);
         panelPersonajeQuest.SetActive(!panelPersonajeQuest.activeSelf);
+    }
+
+    public void AbrirCerrarPanelVolumen()
+    {
+        panelPersonajeQuest.SetActive(false);
+        panelInventario.SetActive(false);
+        panelStats.SetActive(false);
+        panelVolumen.SetActive(!panelVolumen.activeSelf);
     }
 
     public void AbrirPanelInteraccion(InteraccionExtraNPC tipoInteraccion)
@@ -145,12 +165,18 @@ public class UIManager : Singleton<UIManager>
                 break;
 
             case InteraccionExtraNPC.Tienda:
+                AbrirCerrarPanelTienda();
                 break;
 
             case InteraccionExtraNPC.Crafting:
                 break;
 
         }
+    }
+
+    public void AbrirCerrarPanelTienda()
+    {
+        panelTienda.SetActive(!panelTienda.activeSelf);
     }
 
     #endregion

@@ -77,4 +77,19 @@ public class PersonajeExperiencia : MonoBehaviour
     {
         UIManager.Instance.ActualizarExpPersonaje(expActualTemp, expReqSigNivel);
     }
+
+    private void RespuestaEnemigoDerrotado(float exp)
+    {
+        AgregarExperiencia(exp);
+    }
+
+    private void OnEnable() 
+    {
+     EnemigoVida.EventoEnemigoDerrotado += RespuestaEnemigoDerrotado;    
+    }
+
+    private void OnDisable() 
+    {
+     EnemigoVida.EventoEnemigoDerrotado -= RespuestaEnemigoDerrotado;    
+    }
 }

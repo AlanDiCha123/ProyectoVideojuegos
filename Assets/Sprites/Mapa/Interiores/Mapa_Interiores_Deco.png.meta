@@ -98,15 +98,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mapa_Interiores_Deco_0
+      name: Comercio_Sup
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 80
-        height: 96
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,10 +118,52 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Comercio_Borde
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803e77ebe0a5fa64faa190828efb351b
+      internalID: 208126693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Negro
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9867dd5079f56ca46b40804ee8701ba7
+      internalID: -1302403886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3c877e6676f31464fa88ad60b892d7fe
     internalID: 0
     vertices: []
     indices: 
@@ -129,7 +171,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mapa_Interiores_Deco_0: -243060275515691318
+      Comercio_Borde: 208126693
+      Comercio_Sup: -243060275515691318
+      Fondo_Negro: -1302403886
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
