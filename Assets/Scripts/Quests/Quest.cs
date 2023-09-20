@@ -25,6 +25,7 @@ public class Quest : ScriptableObject
 
     [HideInInspector] public int CantidadActual;
     [HideInInspector] public bool IsQuestCompletado;
+    [HideInInspector] public bool QuestAceptado;
 
     public void AgregarProgreso(int cantidad)
     {
@@ -51,7 +52,7 @@ public class Quest : ScriptableObject
         EventoQuestCompletado?.Invoke(this);
     }
 
-    private void OnEnable()
+    public void ResetQuest()
     {
         IsQuestCompletado = false;
         CantidadActual = 0;

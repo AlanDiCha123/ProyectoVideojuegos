@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelInspectorQuest;
     [SerializeField] private GameObject panelPersonajeQuest;
     [SerializeField] private GameObject panelVolumen;
+    [SerializeField] private GameObject panelGameOver;
 
     [Header("Vida")]
     [SerializeField] private Image vidaPlayer;
@@ -41,6 +42,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI statNivelTMP;
     [SerializeField] private TextMeshProUGUI statExpTMP;
     [SerializeField] private TextMeshProUGUI statExpReqTMP;
+    [SerializeField] private TextMeshProUGUI statExpTotalTMP;
     [SerializeField] private TextMeshProUGUI atributoFuerzaTMP;
     [SerializeField] private TextMeshProUGUI atributoSabiduriaTMP;
     [SerializeField] private TextMeshProUGUI atributoDestrezaTMP;
@@ -92,6 +94,7 @@ public class UIManager : Singleton<UIManager>
         statNivelTMP.text = stats.Nivel.ToString();
         statExpTMP.text = stats.ExpActual.ToString();
         statExpReqTMP.text = stats.ExpReqSigNivel.ToString();
+        statExpTotalTMP.text = stats.ExpTotal.ToString();
 
         atributoFuerzaTMP.text = stats.Fuerza.ToString();
         atributoSabiduriaTMP.text = stats.Sabiduria.ToString();
@@ -156,6 +159,11 @@ public class UIManager : Singleton<UIManager>
         panelVolumen.SetActive(!panelVolumen.activeSelf);
     }
 
+    public void AbrirCerrarPanelTienda()
+    {
+        panelTienda.SetActive(!panelTienda.activeSelf);
+    }
+
     public void AbrirPanelInteraccion(InteraccionExtraNPC tipoInteraccion)
     {
         switch (tipoInteraccion)
@@ -174,10 +182,31 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    public void AbrirCerrarPanelTienda()
+    public void AbrirPanelGameOver()
     {
-        panelTienda.SetActive(!panelTienda.activeSelf);
+        panelGameOver.SetActive(true);
+    }
+
+    public void CerrarTodosPaneles()
+    {
+        panelStats.SetActive(false);
+        panelGameOver.SetActive(false);
+        panelInventario.SetActive(false);
+        panelVolumen.SetActive(false);
+        panelPersonajeQuest.SetActive(false);
     }
 
     #endregion
+
+
+    private void OnEnable() 
+    {
+        PersonajeVida.EventoPersonajeDerrotado += AbrirPanelGameOver;    
+    }
+
+    private void OnDisable() 
+    {
+        PersonajeVida.EventoPersonajeDerrotado -= AbrirPanelGameOver;    
+    }
+
 }

@@ -8,7 +8,7 @@ public class ItemPocionMana : InventarioItem
     [Header("Pocion Info")]
     public float ManaRestauracion;
 
-    public override bool UsarItem()
+    public override bool isItemUsado()
     {
         if (Inventario.Instance.Personaje.PersonajeMana.puedeRestaurar)
         {

@@ -11,6 +11,7 @@ public class EnemigoVida : VidaBase
     [SerializeField] private GameObject rastros;
 
     public static Action<float> EventoEnemigoDerrotado;
+    public static Action EventoEnemigoBossDerrotado;
 
     private EnemigoBarraVida _enemigoBarraVidaCreada;
     private EnemigoInteraccion _enemigoInteraccion;
@@ -51,6 +52,10 @@ public class EnemigoVida : VidaBase
     {
         DesactivarEnemigo();
         EventoEnemigoDerrotado?.Invoke(_enemigoLoot.ExpGanada);
+        if (gameObject.name == "EnemigoBoss")
+        {
+            EventoEnemigoBossDerrotado?.Invoke();
+        }
         QuestManager.Instance.AgregarProgreso("Mata5", 1);
         QuestManager.Instance.AgregarProgreso("Mata10", 1);
         QuestManager.Instance.AgregarProgreso("Mata20", 1);

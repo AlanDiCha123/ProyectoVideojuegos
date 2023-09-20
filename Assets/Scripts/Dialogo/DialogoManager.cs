@@ -34,23 +34,22 @@ public class DialogoManager : Singleton<DialogoManager>
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            UIManager.Instance.CerrarTodosPaneles();
             if (despedidaMostrada)
             {
                 AbrirCerrarPanelDialogo(false);
                 despedidaMostrada = false;
                 return;
             }
-
+            if (dialogoAnimado)
+            {
+                ContinuarDialogo();
+            }
             if (NPCDisponible.Dialogo.ContieneInteraccionExtra)
             {
                 UIManager.Instance.AbrirPanelInteraccion(NPCDisponible.Dialogo.InteraccionExtra);
                 AbrirCerrarPanelDialogo(false);
                 return;
-            }
-
-            if (dialogoAnimado)
-            {
-                ContinuarDialogo();
             }
         }
     }
@@ -60,6 +59,7 @@ public class DialogoManager : Singleton<DialogoManager>
         panelDialogo.SetActive(estado);
     }
 
+    // * continuar dialogo saludo
     private void ConfigurarPanel(NPCDialogo npcDialogo)
     {
         AbrirCerrarPanelDialogo(true);
@@ -70,6 +70,7 @@ public class DialogoManager : Singleton<DialogoManager>
 
     }
 
+    // * Continuar Dialogo chat
     private void CargarDialogosSecuencia(NPCDialogo npcDialogo)
     {
         if (npcDialogo.Conversacion == null || npcDialogo.Conversacion.Length <= 0)
@@ -82,6 +83,7 @@ public class DialogoManager : Singleton<DialogoManager>
         }
     }
 
+    // * Continuar dialogo (despedida)
     private void ContinuarDialogo()
     {
         if (NPCDisponible == null) return;

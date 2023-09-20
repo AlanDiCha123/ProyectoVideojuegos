@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b8af47b1a187de43b373013ca870d18, type: 3}
-  m_Name: ArmaMeleeEspada
+  m_Name: ArmaMagiaEspada
   m_EditorClassIdentifier: 
   ArmaIcono: {fileID: -5937764268318024347, guid: 7ade5397298770744a437dfa5ed6f7e9, type: 3}
-  IconoSkill: {fileID: 0}
-  Tipo: 1
+  IconoSkill: {fileID: 221151040219941854, guid: a3db58b39f8398d4cb62aeeb38d668fc, type: 3}
+  Tipo: 0
   Damage: 9
+  ProyectilPrefab: {fileID: 6325258533134252385, guid: 9905bb79a2355b04782ffbf362c612d8, type: 3}
   ManaRequerida: 14
   ChanceCritico: 3.1
   ChanceBloqueo: 0.2

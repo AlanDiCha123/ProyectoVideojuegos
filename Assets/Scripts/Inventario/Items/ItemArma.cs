@@ -9,17 +9,17 @@ public class ItemArma : InventarioItem
     public Arma Arma;
 
 
-    public override bool EquiparItem()
+    public override bool isItemEquipado()
     {
-        if (ContenedorArma.Instance.ArmaEquipada != null)
-        {
-            return false;
-        }
+        // if (ContenedorArma.Instance.ArmaEquipada != null)
+        // {
+        //     return false;
+        // }
         ContenedorArma.Instance.EquiparArma(this);
         return true;
     }
 
-    public override bool RemoverItem()
+    public override bool isItemRemovido()
     {
         if (ContenedorArma.Instance.ArmaEquipada == null)
         {

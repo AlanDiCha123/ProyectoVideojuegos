@@ -46,7 +46,7 @@ public class PersonajeFX : MonoBehaviour
         nuevoTextoGO.transform.position = canvasTextoPosicion.position;
         nuevoTextoGO.SetActive(true);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         nuevoTextoGO.SetActive(false);
         nuevoTextoGO.transform.SetParent(pooler.ListaContenedor.transform);
     }

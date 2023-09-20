@@ -121,12 +121,12 @@ public class Inventario : Singleton<Inventario>
 
     private void UsarItem(int index)
     {
-        if (itemsInventario[index] == null)
+        if (itemsInventario[index] == null || itemsInventario[index].Tipo == TiposItem.Armas)
         {
             return;
         }
 
-        if (itemsInventario[index].UsarItem())
+        if (itemsInventario[index].isItemUsado())
         {
             EliminarItem(index);
         }
@@ -134,20 +134,26 @@ public class Inventario : Singleton<Inventario>
 
     private void EquiparItem(int index)
     {
-        if (itemsInventario[index] == null || itemsInventario[index].Tipo != TiposItem.Armas)
+        if (itemsInventario[index] == null 
+            || itemsInventario[index].Tipo != TiposItem.Armas)
         {
             return;
         }
-        itemsInventario[index].EquiparItem();
+        itemsInventario[index].isItemEquipado();
     }
 
     private void RemoverItem(int index)
     {
-        if (itemsInventario[index] == null || itemsInventario[index].Tipo != TiposItem.Armas)
+        if (itemsInventario[index] == null 
+            || itemsInventario[index].Tipo == TiposItem.Armas)
         {
             return;
         }
-        itemsInventario[index].RemoverItem();
+        itemsInventario[index].isItemRemovido();
+        itemsInventario[index].Cantidad = 0;
+        itemsInventario[index] = null;
+        InventarioUI.Instance.DibujarItemInventario(null, 0, index);
+        InventarioUI.Instance.PanelInventarioDesc.SetActive(false);
     }
 
     #region Eventos

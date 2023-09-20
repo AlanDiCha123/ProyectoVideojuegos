@@ -39,13 +39,13 @@ public class QuestManager : Singleton<QuestManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            AgregarProgreso("Mata5", 1);
-            AgregarProgreso("Mata10", 1);
-            AgregarProgreso("Mata20", 1);
-            AgregarProgreso("Mata50", 1);
-        }
+        // if (Input.GetKeyDown(KeyCode.V))
+        // {
+        //     AgregarProgreso("Mata5", 1);
+        //     AgregarProgreso("Mata10", 1);
+        //     AgregarProgreso("Mata20", 1);
+        //     AgregarProgreso("Mata50", 1);
+        // }
     }
 
     private void MostrarQuestCompletado(Quest questCompletado)
@@ -62,14 +62,16 @@ public class QuestManager : Singleton<QuestManager>
     {
         for (int i = 0; i < questDisponibles.Length; i++)
         {
-            InspectorQuestDescripcion nuevoQuest = Instantiate(inspectorQuestPrefab, inspectorQuestContenedor);
+            InspectorQuestDescripcion nuevoQuest = 
+                Instantiate(inspectorQuestPrefab, inspectorQuestContenedor);
             nuevoQuest.ConfigurarQuestUI(questDisponibles[i]);
         }
     }
 
     private void AgregarQuestPorCompletar(Quest questPorCompletar)
     {
-        PersonajeQuestDescripcion nuevoQuest = Instantiate(personajeQuestPrefab, personajeQuestContenedor);
+        PersonajeQuestDescripcion nuevoQuest = 
+            Instantiate(personajeQuestPrefab, personajeQuestContenedor);
         nuevoQuest.ConfigurarQuestUI(questPorCompletar);
     }
 
@@ -86,7 +88,8 @@ public class QuestManager : Singleton<QuestManager>
         }
         MonedasManager.Instance.AgregarMonedas(QuestPorReclamar.RecompensaOro);
         personaje.PersonajeExperiencia.AgregarExperiencia(QuestPorReclamar.RecompensaXP);
-        Inventario.Instance.AgregarItem(QuestPorReclamar.RecompensaItem.Item, QuestPorReclamar.RecompensaItem.Cantidad);
+        Inventario.Instance.AgregarItem(QuestPorReclamar.RecompensaItem.Item, 
+            QuestPorReclamar.RecompensaItem.Cantidad);
         panelQuestsCompletado.SetActive(false);
         QuestPorReclamar = null;
     }
@@ -94,7 +97,10 @@ public class QuestManager : Singleton<QuestManager>
     public void AgregarProgreso(string questID, int cantidad)
     {
         Quest questPorActualizar = QuestExiste(questID);
-        questPorActualizar.AgregarProgreso(cantidad);
+        if (questPorActualizar.QuestAceptado)
+        {
+            questPorActualizar.AgregarProgreso(cantidad);
+        }
     }
 
     private Quest QuestExiste(string questID)
@@ -111,6 +117,10 @@ public class QuestManager : Singleton<QuestManager>
 
     private void OnEnable()
     {
+        for (int i = 0; i < questDisponibles.Length; i++)
+        {
+            questDisponibles[i].ResetQuest();
+        }
         Quest.EventoQuestCompletado += QuestCompletadoRespuesta;
     }
 

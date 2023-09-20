@@ -13,14 +13,13 @@ public class InventarioUI : Singleton<InventarioUI>
     [SerializeField] private TextMeshProUGUI itemNombre;
     [SerializeField] private TextMeshProUGUI itemDesc;
 
-
-
     [SerializeField] private InventarioSlot slotPrefab;
     [SerializeField] private Transform contenedor;
 
     public int IndexSlotInicialPorMover { get; private set; }
     public InventarioSlot SlotSeleccionado { get; private set; }
     private List<InventarioSlot> slotsCreados = new List<InventarioSlot>();
+    public GameObject PanelInventarioDesc => panelInventarioDesc;
 
     // Start is called before the first frame update
     void Start()

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ArmaMagiaVara
   m_EditorClassIdentifier: 
   ArmaIcono: {fileID: -4360380717537712796, guid: ce8d4e51c2184744ba7c9803fa59e400, type: 3}
-  IconoSkill: {fileID: 6293972708541611500, guid: 023fcdf994dedd54ba47459b48c48436, type: 3}
+  IconoSkill: {fileID: 4386929954262546681, guid: 7995658b8b7164347ba8df0e7ba43824, type: 3}
   Tipo: 0
   Damage: 8
+  ProyectilPrefab: {fileID: 6325258533134252385, guid: 2c5f6aa9ea22af646a561c8853d6075d, type: 3}
   ManaRequerida: 20
   ChanceCritico: 2.5
   ChanceBloqueo: 1.5

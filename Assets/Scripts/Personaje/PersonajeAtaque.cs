@@ -36,7 +36,7 @@ public class PersonajeAtaque : MonoBehaviour
         ObtenerDireccionDisparo();
         if (Time.time > tiempoParaSigAtaque)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (ArmaEquipada == null || EnemigoObjetivo == null)
                 {

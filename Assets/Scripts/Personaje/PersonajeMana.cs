@@ -29,10 +29,10 @@ public class PersonajeMana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            UsarMana(10f);
-        }
+        // if (Input.GetKeyDown(KeyCode.G))
+        // {
+        //     UsarMana(10f);
+        // }
     }
 
     public void UsarMana(float cantidad)

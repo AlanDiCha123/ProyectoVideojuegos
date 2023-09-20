@@ -35,17 +35,17 @@ public class InventarioItem : ScriptableObject
         return nuevaInstancia;
     }
 
-    public virtual bool UsarItem()
+    public virtual bool isItemUsado()
     {
         return true;
     }
 
-    public virtual bool EquiparItem()
+    public virtual bool isItemEquipado()
     {
         return true;
     }
 
-    public virtual bool RemoverItem()
+    public virtual bool isItemRemovido()
     {
         return true;
     }

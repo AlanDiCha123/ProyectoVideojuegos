@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ArmaMagiaHueso
   m_EditorClassIdentifier: 
   ArmaIcono: {fileID: 584124563360700509, guid: 9cb2ed7feed7c2141b76a36634394b58, type: 3}
-  IconoSkill: {fileID: 221151040219941854, guid: a3db58b39f8398d4cb62aeeb38d668fc, type: 3}
+  IconoSkill: {fileID: -3501067300523844550, guid: c0147600883cd5640a4611da9aa4d796, type: 3}
   Tipo: 0
   Damage: 3
+  ProyectilPrefab: {fileID: 6325258533134252385, guid: aa07c33a7958b724ea3cbb1aa6093b53, type: 3}
   ManaRequerida: 8
   ChanceCritico: 1
   ChanceBloqueo: 0.3

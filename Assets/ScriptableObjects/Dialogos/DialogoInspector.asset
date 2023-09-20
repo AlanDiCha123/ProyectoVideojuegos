@@ -16,10 +16,6 @@ MonoBehaviour:
   Icono: {fileID: 21300000, guid: 69f7e6388bd25fb40bf2b55334c6e317, type: 3}
   ContieneInteraccionExtra: 1
   InteraccionExtra: 0
-  Saludo: Tu no eres de aqui
-  Conversacion:
-  - Oracion: Al parecer tienes pinta de ser un cazador
-  - Oracion: Lo mas probable es que ya sabes de los entidades que habitan alrededor
-      de la ciudadela
-  - Oracion: Como sea, tengo misiones para cazadores como tu
+  Saludo: Tengo unos negocios para ti, se que eres un ninja. Mira te gustaran
+  Conversacion: []
   Despedida: 

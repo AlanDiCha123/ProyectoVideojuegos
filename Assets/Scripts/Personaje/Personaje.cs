@@ -23,6 +23,11 @@ public class Personaje : MonoBehaviour
         PersonajeExperiencia = GetComponent<PersonajeExperiencia>();
     }
 
+    private void Start() 
+    {
+        stats.ResetearValores();    
+    }
+
     public void RestarurarPersonaje()
     {
         PersonajeVida.RestaurarPersonaje();

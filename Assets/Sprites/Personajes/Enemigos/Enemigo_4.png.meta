@@ -101,15 +101,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemigo_4_0
+      name: EnemigoAgua1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 14
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,15 +122,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemigo_4_1
+      name: EnemigoAgua2
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 49
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,10 +142,52 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: EnemigoAgua3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85cfc6e39df48f49a77a65caf200c76
+      internalID: 885896530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemigoAgua4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08a2e53d008a4b4f9d3deb95468cc6a
+      internalID: -1195984407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7da7dc4983f49614096619c91fff120d
     internalID: 0
     vertices: []
     indices: 
@@ -153,8 +195,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemigo_4_0: 2296427240184999531
-      Enemigo_4_1: 7749058809794119924
+      EnemigoAgua1: 2296427240184999531
+      EnemigoAgua2: 7749058809794119924
+      EnemigoAgua3: 885896530
+      EnemigoAgua4: -1195984407
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

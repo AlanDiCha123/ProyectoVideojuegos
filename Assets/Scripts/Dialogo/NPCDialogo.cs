@@ -28,7 +28,7 @@ public class NPCDialogo : ScriptableObject
     [Header("Chat")]
     public DialogoTexto[] Conversacion;
 
-    [Header("Saludo")]
+    [Header("Despedida")]
     [TextArea] public string Despedida;
 
 }

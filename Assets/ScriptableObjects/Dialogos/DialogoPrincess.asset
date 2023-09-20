@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7e4c75dc101cb46870a55b21dc6faf, type: 3}
+  m_Name: DialogoPrincess
+  m_EditorClassIdentifier: 
+  Nombre: Laura
+  Icono: {fileID: 21300000, guid: 96e54746dcc5afc4a938b1f40bf02d2f, type: 3}
+  ContieneInteraccionExtra: 0
+  InteraccionExtra: 0
+  Saludo: Hola ninja
+  Conversacion:
+  - Oracion: Por favor, te pido que ayudes a esta ciudadela
+  - Oracion: Elimina a todos los monstruos, especialmente a uno que tiene atormentado
+      a todos
+  - Oracion: Mis padres no me querian contar de el
+  - Oracion: Pero lo supe por las reacciones de las personas
+  Despedida: Espero que consigas traer la paz a esta ciudadela

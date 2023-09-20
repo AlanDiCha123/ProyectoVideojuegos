@@ -27,14 +27,14 @@ public class PersonajeVida : VidaBase
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            RecibirDamage(10);
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            RestaurarSalud(10);
-        }
+        // if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     RecibirDamage(10);
+        // }
+        // if (Input.GetKeyDown(KeyCode.Y))
+        // {
+        //     RestaurarSalud(10);
+        // }
     }
 
     public void RestaurarSalud(float cantidad)
@@ -62,6 +62,9 @@ public class PersonajeVida : VidaBase
         _boxCollider2D.enabled = false;
         Derrotado = true;
         EventoPersonajeDerrotado?.Invoke();
+        AudioManager.Instance.Audiosource.Stop();
+        AudioManager.Instance.Audiosource2.Stop();
+        AudioManager.Instance.Audiosource4.Play();
         personaMovimiento.GetComponent<PersonajeMovimiento>().enabled = false;
     }
 

@@ -116,13 +116,12 @@ public class IAController : MonoBehaviour
 
     public void AplicarDamagePersonaje(float cantidad)
     {
-        float damagePorRealizar = 0;
         if (Random.value < stats.PorcentajeBloqueo / 100)
         {
             return;
         }
 
-        damagePorRealizar = Mathf.Max(cantidad - stats.Defensa, 1f);
+        float damagePorRealizar = Mathf.Max(cantidad - stats.Defensa, 1f);
         PersonajeReferencia.GetComponent<PersonajeVida>().RecibirDamage(damagePorRealizar);
         EventoDamageRealizado?.Invoke(damagePorRealizar);
     }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7e4c75dc101cb46870a55b21dc6faf, type: 3}
+  m_Name: DialogoOldMan2
+  m_EditorClassIdentifier: 
+  Nombre: Michael
+  Icono: {fileID: 21300000, guid: 4dfe4034ba5b4e547a01c51edbcd442a, type: 3}
+  ContieneInteraccionExtra: 0
+  InteraccionExtra: 0
+  Saludo: Eres el nuevo ninja?
+  Conversacion:
+  - Oracion: Espero que tu seas la salvacion para esta ciudadela
+  - Oracion: Ya sabes hay muchos monstruos
+  - Oracion: Pero hay uno en particular que tiene a todo el pueblo asustado
+  - Oracion: Todos estos de aqui fueron creados por esa COSA
+  Despedida: Espero volver a verte pronto

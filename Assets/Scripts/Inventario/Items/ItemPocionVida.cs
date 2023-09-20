@@ -8,7 +8,7 @@ public class ItemPocionVida : InventarioItem
     [Header("Pocion Info")]
     public float HPRestauracion;
 
-    public override bool UsarItem()
+    public override bool isItemUsado()
     {
         if (Inventario.Instance.Personaje.PersonajeVida.PuedeSerCurado)
         {

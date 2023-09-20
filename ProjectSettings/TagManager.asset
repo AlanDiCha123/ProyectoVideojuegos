@@ -42,8 +42,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Fondo
+  - name: Piso
     uniqueID: 477085907
+    locked: 0
+  - name: DetallesPiso
+    uniqueID: 1113402769
     locked: 0
   - name: Limite
     uniqueID: 1909026717
